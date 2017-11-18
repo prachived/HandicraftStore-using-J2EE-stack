@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Stateful</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Welcome to the Handicraft Store!</h2><br>
+        What would you like to do?<br><br>
+        
+                    <h3>The Products and their cost is:</h3><br>
+                   <p>Miniature Cat-->199<br>
+                       Matchstick Figure-->299<br>
+                       Bamboo Elephants-->399<br>
+                       Woven Coil-->1499<br>
+                       Bamboo Baskets-->1400</p>
+                   
+                   <br>
+                   <br>
+       
+        <form action="hsbServlet" method="GET">
+        <br>
+        <br>
+                Product name:<select name="productname">
+                <option value="None">None</option>
+                <option value="MiniatureCat">Miniature Cat</option>
+                <option value="MatchstickFigure">Matchstick Figure</option>
+                <option value="BambooElephants">Bamboo Elephants</option>
+                <option value="WovenCoil">Woven Coil</option>
+                <option value="BambooBaskets">Bamboo Baskets</option>
+            </select>
+        <br>
+        <br>
+        Quantity:<input type="number" name="quantity"/>
+        <br>
+        <br>
+        <input type="submit" value="buy" name="sub"/>
+        <br>
+        <br>
+        <input type="submit" value="bill" name="sub"/>
+        </form>
+    </body>
+</html>
