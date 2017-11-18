@@ -1,0 +1,1 @@
+# HandicraftStore-using-J2EE-stack
