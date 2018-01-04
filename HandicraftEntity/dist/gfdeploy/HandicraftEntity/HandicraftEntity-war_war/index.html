@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Entity Bean</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="HandiServlet" name="myform" method="GET">
+            Welcome to the Handicraft Store!<br>
+            You are a:
+            <select name="user" id="user" onchange="showForm()">
+                <option value="-1">None</option>
+                <option value="0">Customer</option>
+                <option value="1">Administrator</option>
+            </select>
+           
+            <div id="f1"  style="display:none">
+                Welcome Customer!<br>
+                What do u want to do?
+                <br>
+                Place Order:<input type="button" value="0" id="opt" name="placeorder" onclick="showorderform()" /><br>
+                Change Order:<input type="button" value="1" id="opt" name="changeorder" onclick="showorderform()"/><br>
+                Cancel Order:<input type="button" value="2" id="opt" name="cancelorder" onclick="showorderform()"/><br>
+            </div>
+            <div id="f2" style="display:none">
+                <br>
+                
+                <br>
+                The Items available are:
+                <br>
+                <select name="itemlist">
+                    <option>Miniature Cat</option>
+                    <option>Bamboo Elephant</option>
+                    <option>Wooden Buddha</option>
+                    <option>Woven Bamboo</option>
+                    <option>Coil</option>
+                    <option>MatchStick Figure</option>
+                </select><br>
+               
+                Name:<input type="text" id="opt" name="username1"/><br><br>
+                
+               Item Name :<input type="text" id="opt" name="subitemname1" /><br><br>
+               Quantity: <input type="text" id="opt" name="quan1" /><br>
+               <input type="submit" value="placeorder" name="placeorder" />
+            </div>
+            <br>
+            <div id="f3" style="display:none">
+                <br>
+                
+                <br>
+                The Items are:
+                <br>
+                <select name="itemlist">
+                    <option>Miniature Cat</option>
+                    <option>Bamboo Elephant</option>
+                    <option>Wooden Buddha</option>
+                    <option>Woven Bamboo</option>
+                    <option>Coil</option>
+                    <option>MatchStick Figure</option>
+                </select><br>
+                Name:<input type="text" id="opt" name="username2"/><br><br>
+                
+               Item Name :<input type="text" name="subitemname2" id="opt" /><br><br>
+               New Quantity:<input type="text" name="newquan" id="opt"/><br><br>
+               <input type="submit" value="changeorder" name="changeorder" />
+            </div>
+            <br>
+            <div id="f4"  style="display:none">
+                Welcome Administrator!<br>
+                What do u want to do?
+                <br>
+                Add Record:<input type="button" value="0" name="AddRecord" id="opt" onclick="showAdminForm()" /><br>
+                Delete Record:<input type="button" value="1" name="DeleteRecord" id="opt" onclick="showAdminForm()"/><br>
+            </div>
+            <div id="f5" style="display:none">
+               You have chosen to ADD a record<br>
+              
+               Item Name :<input type="text" name="subitemname3" id="opt" /><br><br>
+               Cost of the product :<input type="text" name="productcost3" id="opt"/><br><br>
+                Quantity: <input type="text" name="quan3" id="opt"/><br>
+                <input type="submit" value="ADD" name="ADD" />
+            
+            </div>
+                 <div id="f6" style="display:none">
+               You have chosen to DELETE a record<br>
+               Username:<input type="text" id="opt" name="username4"/><br><br>
+               Item Name :<input type="text" id="opt" name="subitemname4" /><br><br>
+               Cost of the product :<input type="text" id="opt" name="productcost4"/><br><br>
+                Quantity: <input type="text"  id="opt" name="quan4" /><br>
+                <input type="submit" value="DELETE" name="DELETE" />
+            
+            </div>
+              <div id="f7" style="display:none">
+                  Provide ur name to cancel the order:<br>
+                  <input type="text" id="opt" name="username5"/><br><br>
+                   <input type="submit" value="Cancel" name="Cancel" />
+              </div>
+
+            <script type="text/javascript">
+               function showForm() {
+                        var selusr = document.getElementById("user").value;
+                        if (selusr == 0) {
+                            document.getElementById("f1").style.display = "block";
+                            document.getElementById("f2").style.display = "none";
+                            document.getElementById("f3").style.display = "none";
+                            document.getElementById("f4").style.display = "none";
+                            document.getElementById("f5").style.display = "none";
+                            document.getElementById("f6").style.display = "none";
+                            document.getElementById("f7").style.display = "none";
+                        }
+                        if(selusr ==1){
+                        document.getElementById("f1").style.display = "none";
+                            document.getElementById("f2").style.display = "none";
+                            document.getElementById("f3").style.display = "none";
+                            document.getElementById("f4").style.display = "block";
+                            document.getElementById("f5").style.display = "none";
+                            document.getElementById("f6").style.display = "none";   
+                            document.getElementById("f7").style.display = "none";
+                        }
+                    }
+                function showorderform() {
+                    var orval=document.getElementById("opt").value;
+                    if(orval==0)
+                    {
+                      document.getElementById("f1").style.display = "none";
+                            document.getElementById("f2").style.display = "block";
+                            document.getElementById("f3").style.display = "none";
+                            document.getElementById("f4").style.display = "none";
+                            document.getElementById("f5").style.display = "none";
+                            document.getElementById("f6").style.display = "none"; 
+                            document.getElementById("f7").style.display = "none";
+                    }
+                    if(orval==1)
+                    {
+                        document.getElementById("f1").style.display = "none";
+                            document.getElementById("f2").style.display = "none";
+                            document.getElementById("f3").style.display = "block";
+                            document.getElementById("f4").style.display = "none";
+                            document.getElementById("f5").style.display = "none";
+                            document.getElementById("f6").style.display = "none";
+                            document.getElementById("f7").style.display = "none";
+                    }
+                    if(orval==2)
+                    {
+                        document.getElementById("f1").style.display = "none";
+                            document.getElementById("f2").style.display = "none";
+                            document.getElementById("f3").style.display = "none";
+                            document.getElementById("f4").style.display = "none";
+                            document.getElementById("f5").style.display = "none";
+                            document.getElementById("f6").style.display = "none";
+                            document.getElementById("f7").style.display = "block";
+                    }
+                }
+                function showAdminForm(){
+                    var adval=document.getElementById("opt").value;
+                    if(adval==0)
+                    {
+                        document.getElementById("f1").style.display = "none";
+                            document.getElementById("f2").style.display = "none";
+                            document.getElementById("f3").style.display = "none";
+                            document.getElementById("f4").style.display = "none";
+                            document.getElementById("f5").style.display = "block";
+                            document.getElementById("f6").style.display = "none";
+                            document.getElementById("f7").style.display = "none";
+                    }
+                    if(adval==1)
+                    {
+                        document.getElementById("f1").style.display = "none";
+                            document.getElementById("f2").style.display = "none";
+                            document.getElementById("f3").style.display = "none";
+                            document.getElementById("f4").style.display = "none";
+                            document.getElementById("f5").style.display = "none";
+                            document.getElementById("f6").style.display = "block";
+                            document.getElementById("f7").style.display = "none";
+                    }
+                }
+               </script>
+        </form>
+    </body>
+</html>

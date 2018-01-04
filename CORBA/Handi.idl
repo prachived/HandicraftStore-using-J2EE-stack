@@ -1,0 +1,11 @@
+module HandiApp
+{
+	interface Handi
+	{
+		string display(in string sa);
+		string getprice(in string sb,in string s);
+		string tot(in string sc);
+		
+	oneway void shutdown();
+	};
+};
